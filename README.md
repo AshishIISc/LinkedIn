@@ -4,19 +4,6 @@ Here's the corrected `README.md` with your exact endpoints:
 # URL Scraper API with FastAPI
 
 A web application that scrapes website content with both UI and API interfaces, deployed on Vercel.
-
-## Features
-- 🌐 Web UI for easy testing
-- 🔌 REST API for programmatic access
-- 📄 JSON responses/downloads
-- 🔍 Extracts:
-  - Page title
-  - Meta description
-  - Main text content
-
-## Access Points
-
-### Web Interface
 ```
 https://linked-in-five-sigma.vercel.app/
 ```
