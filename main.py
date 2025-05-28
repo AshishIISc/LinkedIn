@@ -32,6 +32,7 @@ app.add_middleware(
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
 class ScrapeResult(BaseModel):
     url: str
     title: Optional[str] = None
@@ -40,9 +41,11 @@ class ScrapeResult(BaseModel):
     status: str
     error: Optional[str] = None
 
+
 @app.get("/", response_class=HTMLResponse, tags=["UI"])
 async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
 
 @app.post("/scrape-ui", response_class=HTMLResponse, tags=["UI"])
 async def scrape_via_ui(
@@ -82,6 +85,7 @@ async def scrape_via_ui(
             }
         )
 
+
 @app.get("/scrape", response_model=ScrapeResult, tags=["API"])
 async def scrape_api(
     url: str = Query(..., description="URL to scrape"),
@@ -109,6 +113,7 @@ async def scrape_api(
                 "error": str(e)
             }
         )
+
 
 @app.get("/download-json", tags=["UI"])
 async def download_json(
